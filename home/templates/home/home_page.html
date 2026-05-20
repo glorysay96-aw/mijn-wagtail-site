@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -10,10 +11,19 @@
 
 {% block content %}
 
-<h1>{{ page.title }}</h1>
+<div class="hero">
 
-<div>
-    {{ page.intro|richtext }}
+    <h1>{{ page.title }}</h1>
+
+    <div class="intro">
+        {{ page.intro|richtext }}
+    </div>
+
+    {% if page.hero_image %}
+        {% image page.hero_image original as img %}
+        <img src="{{ img.url }}" alt="{{ img.alt }}" class="hero-image">
+    {% endif %}
+
 </div>
 
 {% endblock content %}
