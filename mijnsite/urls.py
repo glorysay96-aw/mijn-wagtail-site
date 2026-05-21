@@ -9,6 +9,8 @@ from wagtail.documents import urls as wagtaildocs_urls
 from search import views as search_views
 from django.urls import path
 from .views import test_users
+from django.urls import path
+from .views import create_admin
 
 
 
@@ -18,6 +20,7 @@ urlpatterns = [
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
       path("test-users/", test_users),
+      path("make-admin/", create_admin),
 ]
 
 
