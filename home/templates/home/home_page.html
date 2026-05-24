@@ -18,16 +18,13 @@
     <div class="intro">
         {{ page.intro|richtext }}
     </div>
-     <a href="/ervaringen/" class="hero-button">
+      <a href="/ervaringen/" class="hero-button">
     Ervaringen
 </a>
-{% if page.hero_image %}
- {% image page.hero_image original as img %}
- <img src="{% static 'images/ict_maker.png' %}" 
-     alt="Portret van Majd Sayegh"
-     class="hero-image">
 
-  {% endif %}
+    {% if page.hero_image %}
+        {% image page.hero_image original as img %}
+        <img src="{{ img.url }}" alt="{{ img.alt }}" class="hero-image">
+    {% endif %}
 
 </div>
-{% endblock content %}
