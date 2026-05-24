@@ -21,10 +21,9 @@
      <a href="/ervaringen/" class="hero-button">
     Ervaringen
 </a>
+{% load static %}
 
-    {% load static %}
-    {% images ict_maker as img %}
-    <img src="{% static 'images/ict_maker.png' %}" alt="Hero Image" class="hero-image">
+<img src="{% static 'images/ict_maker.png' %}" alt="Hero Image" class="hero-image">
 
 </div>
 {% endblock content %}
