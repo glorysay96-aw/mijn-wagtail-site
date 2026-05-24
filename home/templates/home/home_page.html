@@ -21,9 +21,10 @@
      <a href="/ervaringen/" class="hero-button">
     Ervaringen
 </a>
-{% load static %}
-
-<img src="{% static 'images/ict_maker.png' %}" alt="Hero Image" class="hero-image">
+{% if page.hero_image %}
+ {% image page.hero_image original as img %}
+  <img src="{{ img.url }}" alt="{{ img.alt }}" class="hero-image"> 
+  {% endif %}
 
 </div>
 {% endblock content %}
